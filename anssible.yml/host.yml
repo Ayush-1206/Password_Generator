@@ -1,0 +1,11 @@
+- hosts : all
+  task : 
+   - packages : 
+       name : httpd
+       state : present
+   - copy :
+       dest : /vat/www/html
+       content : "this is my page"
+   - service :
+      name : httpd
+      state : started 
